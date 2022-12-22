@@ -65,8 +65,8 @@ function App() {
       <div className='container my-3'>
       <Routes>
         {/* exact is used to match exact match otherwise react sometime match partially and we get error 404 not found   */}
-            <Route exact path="/home" element={<TextForm showAlert = {showAlert} heading="SuperText - Word Counter, Character Counter, Remove extra Spaces" mode = {mode}/>}/>
-            <Route exact path="/" element={<About mode={mode}/>}/>
+            <Route exact path="/" element={<TextForm showAlert = {showAlert} heading="SuperText - Word Counter, Character Counter, Remove extra Spaces" mode = {mode}/>}/>
+            <Route exact path="/about" element={<About mode={mode}/>}/>
       </Routes>
       </div>
     </Router>
