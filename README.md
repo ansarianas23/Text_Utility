@@ -1,4 +1,4 @@
-Demo live At https://supertext.netlify.app/]
+Demo live At https://supertext.netlify.app/
 
 Light Mode
 ![Light](https://user-images.githubusercontent.com/111463267/209430687-bed4ac2e-10e7-419e-b6e4-040232be5d84.jpg)
