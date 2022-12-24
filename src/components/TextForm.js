@@ -1,6 +1,7 @@
 import React, {useState}from 'react'
 
 export default function TextForm(props) {
+    
     // Function to convert upper case
     const handleUpClick = ()=>{
         // console.log('Uppercase was clicked: ' + text);
@@ -48,10 +49,13 @@ export default function TextForm(props) {
     const [text, setText] = useState("")
     // text = "nasdasdonaosdnf"    // wrong way to change the state
     // setText("nasdasdonaosdnf")    // correct way to change the state
+
+
     return (
         <>
         <div className='container' style={{color: props.mode ==='light'? 'black': 'white'}}>
             <h1 className='mb-3'>{props.heading}</h1>
+
             <div className="mb-3">
                 <textarea className="form-control" style={{backgroundColor: props.mode ==='light'? 'white': '#13466e', color: props.mode ==='light'? 'black': 'white'}} placeholder = "Enter your text here" value={text} onChange = {handleOnChnage} id="myBox" rows="10"></textarea>
                 <button disabled={text.length===0} className='btn btn-primary mt-3' onClick={handleUpClick}>UPPERCASE</button>

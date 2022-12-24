@@ -1,17 +1,12 @@
-import { useState } from 'react';     // imrs shortcut
-import './App.css';
+import { useState } from 'react';
 import About from './components/About';
 import Alert from './components/Alert';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 
 function App() {
+
   // Alert state
   const [alert, setAlert] = useState(null);
 
@@ -29,6 +24,7 @@ function App() {
   // light/dark mode state
   const [mode, setMode] = useState('light');
 
+  // Function to toggle dark and light mode
   const toggleMode = ()=>{
     if(mode === 'light'){
       setMode('dark')
@@ -53,22 +49,21 @@ function App() {
       // document.title = "Super Text - Light Mode"
     }
   }
+
+
   return (
     <>
     <Router>
-      {/* <Navbar title="SuperText" aboutText = "About us" /> */}
-      <Navbar title="SuperText" mode={mode} toggleMode={toggleMode} />
-      {/* <Navbar/> */}
+        <Navbar title="SuperText" mode={mode} toggleMode={toggleMode} />
 
-      <Alert alert={alert}/>
+        <Alert alert={alert}/>
 
-      <div className='container my-3'>
-      <Routes>
-        {/* exact is used to match exact match otherwise react sometime match partially and we get error 404 not found   */}
-            <Route exact path="/" element={<TextForm showAlert = {showAlert} heading="SuperText - Word Counter, Character Counter, Remove extra Spaces" mode = {mode}/>}/>
-            <Route exact path="/about" element={<About mode={mode}/>}/>
-      </Routes>
-      </div>
+        <div className='container my-3'>
+            <Routes>
+                <Route exact path="/" element={<TextForm showAlert = {showAlert} heading="SuperText - Word Counter, Character Counter, Remove extra Spaces" mode = {mode}/>}/>
+                <Route exact path="/about" element={<About mode={mode}/>}/>
+            </Routes>
+        </div>
     </Router>
     </>
   );
